@@ -15,6 +15,16 @@
 pip install gofilepy
 ```
 
+* to test in local
+
+```sh
+pip install build
+python -m build
+# new files (.tar.gz and .whl) created in dist/ folder
+pip install ./dist/gofilepy-0.4.0-py3-none-any.whl
+```
+
+
 ## ⬆️  Upgrade Existing Installation
 
 ```sh
