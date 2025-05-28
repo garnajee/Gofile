@@ -6,7 +6,7 @@
 
 
 ## Requirements
-- 🐍 [python>=3.7](https://www.python.org/downloads/)
+- 🐍 [python>=3.13](https://www.python.org/downloads/)
 
 
 ## ⬇️ Installation

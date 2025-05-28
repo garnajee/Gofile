@@ -1,2 +1,4 @@
-requests>=2.0
-rich>=9.0
+requests
+requests-toolbelt
+rich
+tqdm

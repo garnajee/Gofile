@@ -1,15 +1,17 @@
 [tool.poetry]
 name = "gofilepy"
-version = "0.3.3"
+version = "0.4.0"
 description = "Upload files to Gofile.io"
-authors = ["Mohammad Alyetama <malyetama@pm.me>"]
+authors = ["Mohammad Alyetama <malyetama@pm.me>", "Garnajee"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-requests = ">=2.0"
-rich = ">=9.0"
+python = "^3.13"
+requests = ">=2.32.3"
+rich = ">=13.9.4"
+requests-toolbelt = ">=1.0.0"
+tqdm = ">=4.67.1"
 
 [tool.poetry.dev-dependencies]
 
