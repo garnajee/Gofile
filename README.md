@@ -24,6 +24,9 @@ python -m build
 pip install ./dist/gofilepy-0.4.0-py3-none-any.whl
 ```
 
+> [!NOTE]
+> If you want to upload to an existing folder, you need to give the id which is something like this `a08f31e7-d478-4097-5673-50g8391c2e8d` (uuid4 style)
+
 
 ## ⬆️  Upgrade Existing Installation
 
@@ -48,6 +51,7 @@ options:
                         Upload multiple files to the same folder. All files
                         will share the same URL. This option requires a valid
                         token exported as: `GOFILE_TOKEN`
+  -f, --folder-id       ID of an existing Gofile folder into which to upload files
   -o, --open-urls       Open the URL(s) in the browser when the upload is
                         complete (macOS-only)
   -e, --export          Export upload response(s) to a JSON file
@@ -173,7 +177,7 @@ Exported data to: gofile_export_1653950555.json
 
 ### 🔑 Optional: Saving uploads to your Gofile account
 
-If you want the files to be uploaded to a specific account, you can export your gofile token, which can be retrieved from the [profile page](https://gofile.io/myProfile), as an environment variable `GOFILE_TOKEN`.
+If you want the files to be uploaded to a specific account, you can export your gofile token, which can be retrieved from the [profile page](https://gofile.io/) in the network tab (named `accountToken`), as an environment variable `GOFILE_TOKEN`.
 
 ```sh
 export GOFILE_TOKEN='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
