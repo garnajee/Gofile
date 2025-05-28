@@ -21,7 +21,7 @@ from rich.panel import Panel
 
 def upload(file: str, best_server: str, folder_id: Optional[str] = None):
     f_obj = Path(file)
-    file_size = f_obj.stat().st_size  # Taille du fichier
+    file_size = f_obj.stat().st_size
     upload_url = f"https://{best_server}.gofile.io/uploadFile"
     
     print(f"Upload de {f_obj.name} :")
@@ -36,7 +36,6 @@ def upload(file: str, best_server: str, folder_id: Optional[str] = None):
             def progress_callback(monitor):
                 progress.update(monitor.bytes_read - progress.n)
 
-            # Préparation du téléversement avec suivi
             content_type = mimetypes.guess_type(f_obj)[0] or "application/octet-stream"
             encoder = MultipartEncoder(
                 fields={
@@ -48,7 +47,6 @@ def upload(file: str, best_server: str, folder_id: Optional[str] = None):
             monitor = MultipartEncoderMonitor(encoder, progress_callback)
             headers = {"Content-Type": monitor.content_type}
 
-            # Envoi de la requête
             try:
                 response = requests.post(upload_url, data=monitor, headers=headers)
                 response.raise_for_status() 
@@ -108,6 +106,7 @@ def gofile_upload(
         upload_resp = upload(file, best_server, folder_id).json()
         if to_single_folder and os.getenv("GOFILE_TOKEN") and folder_id is None:
             folder_id = upload_resp["data"]["parentFolder"]
+            print(folder_id)
 
         ts = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
         file_abs = str(Path(file).absolute())
